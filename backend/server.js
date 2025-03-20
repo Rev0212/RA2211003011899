@@ -1,10 +1,14 @@
 const express = require('express');
+const cors = require('cors');
 const usersRoutes = require('./routes/users');  
 const postsRoutes = require('./routes/post'); 
 const errorHandler = require('./errorHandler');
 
 const app = express();
 const PORT = process.env.PORT || 4001;
+
+// Enable CORS
+app.use(cors());
 
 // routes
 app.use('/users', usersRoutes);  
